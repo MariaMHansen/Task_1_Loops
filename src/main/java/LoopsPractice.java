@@ -1,4 +1,4 @@
-public class SimpleTests {
+public class LoopsPractice {
     // Write a public static function `sayHello` that returns "hello world!"
     public static String sayHello(){
         // Add Your Code Here ...
