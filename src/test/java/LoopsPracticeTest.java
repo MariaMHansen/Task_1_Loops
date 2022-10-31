@@ -16,9 +16,9 @@ class LoopsPracticeTest {
     }
 
     // Test 1
-    @DisplayName("Checks if simple login returns true for the correct password.")
+    @DisplayName("Checks if simple login returns false for the wrong password.")
     @Test
-    void simpleLoginTrueTest() throws Exception {
+    void simpleLoginTrueFalseTest() throws Exception {
         // Feedback in case the correct password fails
         if(LoopsPractice.simpleLogin(1234).equals("Login failed")){
             fail(   "\n" +
@@ -35,13 +35,6 @@ class LoopsPracticeTest {
                     "-------------------------------------------------------------------------\n"
             );
         }
-
-       Assertions.assertEquals("Login successful", LoopsPractice.simpleLogin(1234));
-    }
-    // Test 2
-    @DisplayName("Checks if simple login returns false for the wrong password.")
-    @Test
-    void simpleLoginFalseTest() throws Exception {
         // Feedback in case the wrong password returns true
         if(LoopsPractice.simpleLogin(1111).equals("Login successful")){
             fail(   "\n" +
@@ -58,18 +51,29 @@ class LoopsPracticeTest {
             );
         }
         Assertions.assertEquals("Login failed", LoopsPractice.simpleLogin(1111));
+       // Assertions.assertEquals("Login successful", LoopsPractice.simpleLogin(1234));
     }
 
-    // Test 3
-    @DisplayName("Checks if login system returns true for the correct password.")
+    // Test 2
+    @DisplayName("Checks if login system returns false/true for the wrong/correct password.")
     @Test
-    void loginSystemTrueTest() throws Exception {
-        Assertions.assertEquals("Login successful", LoopsPractice.loginSystem(1234));
-    }
-    // Test 4
-    @DisplayName("Checks if login system returns false for the wrong password.")
-    @Test
-    void loginSystemFalseTest() throws Exception {
+    void loginSystemTrueFalseTest() throws Exception {
+        // Feedback for correct password returning wrong result
+        if(LoopsPractice.loginSystem(1234).equals("Login failed, wrong attempts: "+3)){
+            fail(   "\n" +
+                    "-------------------------------------------------------------------------\n" +
+                    "AUTO-FEEDBACK:\n" +
+                    "Step 1:\n" +
+                    " Have you changed the correct pin?\n" +
+                    "          The correctPin must be 1234 for the test to work.\n"+
+                    "          Your login method returns false for the correct pin code.\n"+
+                    "          Please, check your conditional statements.\n"+
+                    "          You can read more about if statements in:\n"+
+                    "          \"Introduction to Java Programming and Data Structures book\"\n" +
+                    "          chapter 3.3 if Statements\n" +
+                    "-------------------------------------------------------------------------\n"
+            );
+        }
         // Feedback for counter counting one too many loop iterations
         if(LoopsPractice.loginSystem(1111).equals("Login failed, wrong attempts: "+4)){
             fail(   "\n" +
@@ -102,8 +106,10 @@ class LoopsPracticeTest {
         }
 
         Assertions.assertEquals("Login failed, wrong attempts: "+3, LoopsPractice.loginSystem(1111));
+        Assertions.assertEquals("Login successful", LoopsPractice.loginSystem(1234));
+
     }
-    // Test 5
+    // Test 3
     @DisplayName("Checks if guess a number returns the correct number of attempts.")
     @Test
     void guessNumberTest() {
@@ -155,7 +161,7 @@ class LoopsPracticeTest {
         Assertions.assertEquals(3, LoopsPractice.guessNumber(5,3,10));
     }
 
-    // Test 6
+    // Test 4
     @DisplayName("Checks if guess combination returns the correct number of attempts.")
     @Test
     void guessCombinationTest() {
@@ -206,7 +212,7 @@ class LoopsPracticeTest {
 
         Assertions.assertEquals(123, LoopsPractice.guessCombination(123));
     }
-    // Test 7
+    // Test 5
     @DisplayName("Checks if pin generator returns the number of digits reqiested.")
     @Test
     void pinGeneratorTest() throws Exception {
