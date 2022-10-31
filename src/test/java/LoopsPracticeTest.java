@@ -233,7 +233,7 @@ class LoopsPracticeTest {
             );
         }
         // Feedback for a counter that does not iterate
-        if(LoopsPractice.pinGenerator(4).equals(LoopsPractice.pinGenerator(4))){
+        if(LoopsPractice.pinGenerator(4).equals(LoopsPractice.pinGenerator(4))&&(LoopsPractice.pinGenerator(6)).length()!=0){
             fail(   "\n" +
                     "-------------------------------------------------------------------------\n" +
                     "AUTO-FEEDBACK:\n" +

@@ -2,7 +2,7 @@ public class LoopsPractice {
 
   /*
        Welcome to assignment two,
-       Where you will practice with different kinds of loops.
+       where you will practice with different kinds of loops.
        Loops are a commonly used feature in programming,
        for executing a  part of code repeatedly until a condition evaluates to be true.
        We will also be exploring using as a tool loops for systematically guessing numbers.
@@ -28,11 +28,11 @@ public class LoopsPractice {
      */
 
     public static void main(String[] args) {
-        System.out.println("Task 1: Simple login: " + simpleLogin(1234));
-        System.out.println("Task 2: Login system: " + loginSystem(1234));
-        System.out.println("Task 3: Guess a number: " + guessNumber(5, 3, 10)+ " attempts");
-        System.out.println("Task 4: Guess combination: " + guessCombination(123)+ " attempts");
-        System.out.println("Task 5: Pin generator: " + pinGenerator(4));
+        //System.out.println("Task 1: Simple login: " + simpleLogin(1234));
+        //System.out.println("Task 2: Login system: " + loginSystem(1234));
+        //System.out.println("Task 3: Guess a number: " + guessNumber(5, 3, 10)+ " attempts");
+        //System.out.println("Task 4: Guess combination: " + guessCombination(123)+ " attempts");
+        //System.out.println("Task 5: Pin generator: " + pinGenerator(4));
     }
     /**
      *  STEP 1:
@@ -50,9 +50,9 @@ public class LoopsPractice {
      * Difficulty: 1
      */
     public static String simpleLogin(int pin){
-        int correctPin = 1234;
-        if(pin==correctPin) {return "Login successful";}
-        else {return "Login failed";}
+        //Write your code here...
+
+        return "";
     }
     /**
      *  STEP 2:
@@ -69,20 +69,15 @@ public class LoopsPractice {
      * @param pin the pin to compare with the correct one
      * @return  a provided String followed by a counter variable
      * Points: 2
-     * New skills: while with a stop condition and counter
+     * New skills: while loop with counter
      * Difficulty: 2
      */
 
     public static String loginSystem(int pin){
-        int correctPin = 1234;
-        int counter = 0;
-        while (counter<3){
-            if(pin==correctPin){
-                return "Login successful";
-            }
-            counter ++;
-        }
-        return "Login failed, wrong attempts: "+counter;
+        int counter =0;
+        //Write your code here...
+
+        return "" + counter;
     }
 
     /**
@@ -107,14 +102,9 @@ public class LoopsPractice {
      * Difficulty: 3
      */
     public static int guessNumber(int targetNumber, int startNumber, int endNumber){
-        int counter = 0;
-        for(int i = startNumber; i<endNumber; i++){
-            counter ++;
-            if (i==targetNumber){
-                break;
-            }
-        }
-        return counter;
+        //Write your code here...
+
+        return -1;
     }
 
     /**
@@ -135,23 +125,14 @@ public class LoopsPractice {
      *     and by 10 for the second digit when comparing to the 3 digit input pin
      * @param pin the code the method is trying to brute-force
      * @return  number of attempts it took to guess the number
-     * Points: 2
+     * Points: 3
      * New skills: nested loops
      * Difficulty: 4
      */
       public static int guessCombination (int pin){
-        int counter = 0;
-          for(int i = 0; i<10; i++) {
-              for (int j = 0; j < 10; j++) {
-                  for (int k = 0; k < 10; k++) {
-                      if (pin == ((i*100)+(j * 10) + k)) {
-                          return counter;
-                      }
-                      counter++;
-                  }
-              }
-          }
-        return counter;
+          //Write your code here...
+
+        return -1;
     }
 
     /**
@@ -173,12 +154,8 @@ public class LoopsPractice {
      */
     public static String pinGenerator(int size){
         String result ="";
-        int counter = 0;
-        while (counter <size){
-            result+=(int)Math.floor(Math.random() * 10);
-            counter ++;
+        //Write your code here...
 
-        }
         return result;
     }
 }
