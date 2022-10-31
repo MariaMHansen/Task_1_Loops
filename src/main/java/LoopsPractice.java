@@ -61,31 +61,28 @@ public class LoopsPractice {
      *     by only allowing 3 wrong attempts to enter the password.
      *     Make a method that accepts a pin as input and tries to compare it
      *     to the correctPin 4 times.
-     *     If the pin is correct the method returns "Login successful, total attempts: " +counter;
-     *     If the pin is wrong the method returns "Login failed, total attempts: " +counter;
+     *     If the pin is correct the method returns "Login successful";
+     *     If the pin is wrong the method returns "Login failed, wrong attempts: " +counter;
      *     The counter is a variable which counts how many times the loop was executed.
      *     Example: If we use 1111 as input the method will return
      *              Login failed, total attempts: 4
      * @param pin the pin to compare with the correct one
      * @return  a provided String followed by a counter variable
      * Points: 2
-     * New skills: for loop with conditions
+     * New skills: while with a stop condition and counter
      * Difficulty: 2
      */
+
     public static String loginSystem(int pin){
         int correctPin = 1234;
-        int counter = 1;
-        for (int i=1; i<=4; i++){
-            if(counter>3){
-                break;
+        int counter = 0;
+        while (counter<3){
+            if(pin==correctPin){
+                return "Login successful";
             }
-            if(pin == correctPin){
-                return "Login successful, total attempts: "+counter;
-            }
-            counter++;
+            counter ++;
         }
-
-        return "Login failed, total attempts: "+counter;
+        return "Login failed, wrong attempts: "+counter;
     }
 
     /**
@@ -147,10 +144,10 @@ public class LoopsPractice {
           for(int i = 0; i<10; i++) {
               for (int j = 0; j < 10; j++) {
                   for (int k = 0; k < 10; k++) {
-                      counter++;
                       if (pin == ((i*100)+(j * 10) + k)) {
                           return counter;
                       }
+                      counter++;
                   }
               }
           }
@@ -183,35 +180,5 @@ public class LoopsPractice {
 
         }
         return result;
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //////////////////////////////
-    //  OLD CODE                //
-    //////////////////////////////
-    // Write a public static function `sayHello` that returns "hello world!"
-    public static String sayHello(){
-        // Add Your Code Here ...
-        return "hello world!";
-    }
-
-    // Write a public static function that counts how many times the letter combination "dog" appears in the string
-    public static int countDogs(String phrase) {
-        // Add Your Code Here ...
-        return -1;
     }
 }
