@@ -51,7 +51,7 @@ class LoopsPracticeTest {
             );
         }
         Assertions.assertEquals("Login failed", LoopsPractice.simpleLogin(1111));
-       // Assertions.assertEquals("Login successful", LoopsPractice.simpleLogin(1234));
+        Assertions.assertEquals("Login successful", LoopsPractice.simpleLogin(1234));
     }
 
     // Test 2
